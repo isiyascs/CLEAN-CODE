@@ -1,5 +1,3 @@
-Understand algorithm:
-
 Prefer Polymorphism over if/switch:
 	bad:- 
 		if(numbers == 2) {
