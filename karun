@@ -22,7 +22,7 @@ Follow standard convention:
 
 	good:-
 		add(int firstNumber, int secondNumber) {
-      return firstNumber + secondNumber;
+                        return firstNumber + secondNumber;
 		}
 
 Replace Magic Number with named constant:
