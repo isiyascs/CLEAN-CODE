@@ -112,8 +112,3 @@ Keep Configurable data on high level:
 		circleArea(int radius) {
 			return pi * radius * radius;
 		}
-
-Avoid Transitive Negation:
-	bad:-
-
-	good:-
