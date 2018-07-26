@@ -1,0 +1,130 @@
+//last modified date: 23-07-2018   [1) Inappropriate information]
+//class Person having some attributes and methods.  (good code)
+class Person{
+
+   /*int i;     //[2) Should use descriptive names]
+     String n, b;
+     float p;*/  
+
+	int id;
+	String name;
+  int age;        //(good code)
+  long phNo;
+
+  void getDetails(int id, String name, int age, long phNo){  //[3) No. of arguments > 3]
+		this.id->id;
+		this.name->name;
+    this.age->age;
+    this.phNo->phNo;
+   }      
+   
+  void getDetails(){       //(good code)
+  	this.id->id;
+		this.name->name;
+    this.age->age;
+    this.phNo->phNo;
+   }
+   
+  void printdetails() {         //[4) Should use standard nomenclature]
+		print this.name;
+		print this.age;
+  }
+
+  void printdetails() {
+		print this.name; //(good code)
+		print this.age;
+  }
+}
+
+class Student extends Person {
+	int studentId;
+	String branch;
+  float percentage;
+	
+	void abc() {						// [5) Should use descriptive names]
+	}
+
+  void getDetails(int studentId, String branch, float percentage) {   //(good code)
+  	this.branch=branch;
+    this.percentage=percentage;
+  }    
+
+  void printDetails() {
+  	print this.branch;
+    print this.percentage;
+  }
+
+   /* function checks whether percentage is less than 40, if true prints "failed"
+else checks if percentage is greater than or equal to 40 and less than 55, if true prints "passed" and "D" ... [6) poorly written comment]
+prints "A" */
+   
+	void findGrade() {    //function which was used to print passed or failed is now updated to display grade [7) Obsolete comment]
+		
+		if(percentage<40) {
+    	print "failed"      //prints failed if percentage<40 [8) redundant comment]
+    	print "E"
+		}
+       
+		else if(percentage>=40 && percentage<55) {
+	    print "passed"
+	    print "D"
+		}
+
+    else if(percentage>54 && percentage<70) {
+    	print "passed"
+    	print "C"
+		}
+
+		else if(percentage>69 && percentage<80) {
+    	print "passed"
+    	print "B"
+		}
+
+		else {
+    	print "passed"
+    	print "A"
+		}
+
+ /* if(percentage<40)
+    	print "failed"    //[9) commented out code should be deleted.]
+ 
+  	else
+    	print "passed" */
+	}
+}
+
+class Teacher extends Person {
+	int teacherId;
+	String department;
+	double salary;
+
+	void getDetails(int teacherId, String department, double salary) {   //(good code)
+		this.teacherId = teacherId;  	
+		this.department=department;
+    this.salary=salary;
+  } 
+
+	void printDetails(String department, double salary) {   //(good code)
+  	print this.department;
+    print this.salary;
+  } 
+}
+
+int main() {
+
+	String training (boolean isStudent) { //[10) avoid usage of flags]
+		if(isStudent == true)
+			return "Placement training"
+
+		else
+			return "Orientation for teachers"
+	}
+
+	String student (int id) {
+		return "Placement training"     //(good code)
+	}
+	
+	String teacher (int id){
+		return "Orientation for teachers"
+	}
+}

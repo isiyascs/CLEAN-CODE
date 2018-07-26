@@ -1,0 +1,119 @@
+Understand algorithm:
+
+Prefer Polymorphism over if/switch:
+	bad:- 
+		if(numbers == 2) {
+			return firstNumber + secondNumber;
+		}else if(numbers == 3) {
+			return firstNumber + secondNumber + thirdNumber;
+		}
+
+	good:-
+		add(int firstNumber, int secondNumber) {
+			return firstNumber + secondNumber;
+		}
+		add(int firstNumber, int secondNumber, int thirdNumber) {
+			return firstNumber + secondNumber + thirdNumber;
+		}
+
+Follow standard convention:
+	bad:-
+		add(int firstNumber,int secondNumber){
+		return firstNumber+secondNumber;
+		}
+
+	good:-
+		add(int firstNumber, int secondNumber) {
+      return firstNumber + secondNumber;
+		}
+
+Replace Magic Number with named constant:
+	bad:-
+		circleArea(int radius) {
+			return 3.14 * radius * radius;
+		}
+		circlePerimeter(int radius) {
+			return 2 * 3.14 * radius;
+		}
+
+	good:-
+		pi = 3.14;
+		circleArea(int radius) {
+			return pi * radius * radius;
+		}
+		circlePerimeter(int radius) {
+			return 2 * pi * radius;
+		}
+
+Encapsulate Conditions:
+	bad:-
+		if(number%2 == 0 && number%5 == 0) {
+
+		}
+
+	good:-
+		if(isEvenAndDivisibleBy5()) {
+
+		}
+
+		bool isEvenAndDivisibleBy5() {
+			return (number%2 == 0 && number%5 == 0);
+		}
+
+Avoid negative conditions:
+	bad:-
+		if(!(number%2 == 0)) { 
+
+		}
+
+	good:-
+		if(number%2 == 1) {
+
+		}
+
+Function should do one thing:
+	bad:-
+		maths(int firstNumber, int secondNumber) {
+			int add = firstNumber + secondNumber;
+			int subtract = firstNumber - secondNumber;
+			int multiplication = firstNumber * secondNumber;
+			int division = firstNumber / secondNumber;
+		}
+
+	good:-
+		add(int firstNumber, int secondNumber) {
+			return firstNumber + secondNumber;
+		}
+		subtract(int firstNumber, int secondNumber) {
+			return firstNumber - secondNumber;
+		}
+
+Encapsulate boundary conditions:
+	bad:-
+		if((firstNumber + secondNumber) > 100) {
+
+		}
+
+	good:-
+		sum = firstNumber + secondNumber;
+		if(sum > 100) {
+
+		}
+
+Keep Configurable data on high level:
+	bad:-
+		circleArea(int radius) {
+			const pi = 3.14;
+			return pi * radius * radius;
+		}
+
+	good:-
+		const pi = 3.14;
+		circleArea(int radius) {
+			return pi * radius * radius;
+		}
+
+Avoid Transitive Negation:
+	bad:-
+
+	good:-
